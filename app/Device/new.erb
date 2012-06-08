@@ -1,0 +1,20 @@
+<div data-role="page" data-theme="a">
+
+  <div data-role="header" data-position="inline">
+    <h1>New</h1>
+    <a href="<%=  url_for( :action => :index ,:query => {:user_name=> @params['name']} ) %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+          <div data-role="fieldcontain">
+            <label for="device[name]" class="fieldLabel">User Name</label>
+            <input type="text" id="device[name]" name="device[name]" value="<%= @params['name'] %>"/>
+          </div>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

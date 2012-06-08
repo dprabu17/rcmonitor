@@ -1,0 +1,27 @@
+<div data-role="page" data-theme="a">
+  
+  <div data-role="header" data-position="inline">
+    <h1>Source List</h1>
+    <a href="<%= Rho::RhoConfig.dashboard_path %>" class="ui-btn-left" data-icon="back">
+     Back
+    </a>
+    <a href="<%= url_for :controller=>:RhoMonitor,:action => :logout %>" class="ui-btn-right" >
+     Logout
+    </a>
+  </div>
+
+  <div data-role="content" >
+      
+            <% @sources.each do |source| %>
+            
+                  
+                  <a href="<%= url_for :action => :source_param , :query => {:source_name => source,:user_name =>@params['user_name'] } %>" style="text-decoration: none;">
+                    <div><%= source %><img src="\public\images\rcm\hand-point-icon.png" style="float:right;"/></div>
+                  </a><hr>
+              
+            
+            <% end %>
+         
+  </div>
+
+</div>
